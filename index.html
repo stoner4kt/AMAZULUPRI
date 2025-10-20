@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmaZulu Prime Solutions Ltd Pty - Premium Contracting</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Styles -->
+    <style>
+        /* Custom font application and color palette */
+        :root {
+            --color-primary: #1e3a8a; /* Deep Blue */
+            --color-accent: #fbbf24; /* Amber Gold */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light background */
+            scroll-behavior: smooth;
+        }
+        .bg-primary { background-color: var(--color-primary); }
+        .text-accent { color: var(--color-accent); }
+        .bg-accent { background-color: var(--color-accent); }
+        /* Style for fixed header */
+        .header-fixed {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Hide mobile menu by default */
+        #mobile-menu {
+            transition: transform 0.3s ease-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="header" class="header-fixed sticky top-0 z-50 bg-primary text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-extrabold tracking-tight">
+                    AmaZulu <span class="text-accent">Prime</span> Solutions
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-accent font-semibold transition duration-200">Home</a>
+                    <a href="#services" class="hover:text-accent font-semibold transition duration-200">Services</a>
+                    <a href="#portfolio" class="hover:text-accent font-semibold transition duration-200">Portfolio</a>
+                    <a href="#about" class="hover:text-accent font-semibold transition duration-200">About Us</a>
+                    <a href="#contact" class="bg-accent text-primary px-4 py-2 rounded-lg font-bold hover:bg-yellow-500 transition duration-300 shadow-md">Get a Quote</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-white p-2 rounded-lg hover:bg-blue-800 transition duration-200">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-primary text-white z-50 md:hidden shadow-lg">
+        <div class="flex justify-end p-5">
+            <button id="menu-close" class="text-white p-2 rounded-lg hover:bg-blue-800 transition duration-200">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4 p-5">
+            <!-- Note: onClick handlers added to links for mobile menu closing -->
+            <a href="#home" class="py-2 hover:text-accent text-lg" onclick="closeMenu()">Home</a>
+            <a href="#services" class="py-2 hover:text-accent text-lg" onclick="closeMenu()">Services</a>
+            <a href="#portfolio" class="py-2 hover:text-accent text-lg" onclick="closeMenu()">Portfolio</a>
+            <a href="#about" class="py-2 hover:text-accent text-lg" onclick="closeMenu()">About Us</a>
+            <a href="#contact" class="mt-4 bg-accent text-primary px-4 py-3 rounded-lg font-bold text-center hover:bg-yellow-500 transition duration-300 shadow-md" onclick="closeMenu()">Get a Quote</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="home" class="relative overflow-hidden pt-20 md:pt-24 pb-16 bg-gray-100">
+            <!-- Background overlay for text contrast -->
+            <div class="absolute inset-0 bg-primary opacity-90"></div>
+            <!-- Placeholder for high-res construction image/video -->
+            <div class="absolute inset-0 bg-cover bg-center" 
+                 style="background-image: url('https://placehold.co/1920x1080/1e3a8a/ffffff?text=Premium+Contracting+Visual'); background-blend-mode: multiply; opacity: 0.5;">
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">
+                    Building Your Vision, <span class="text-accent">Delivering Excellence.</span>
+                </h1>
+                <p class="text-xl sm:text-2xl mb-8 font-light max-w-3xl mx-auto">
+                    AmaZulu Prime Solutions is your trusted partner for high-quality, reliable, and timely contracting and construction services.
+                </p>
+                <div class="space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#contact" class="inline-block bg-accent text-primary text-lg font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-[1.03]">
+                        Request a Free Quote
+                    </a>
+                    <a href="#portfolio" class="inline-block border-2 border-white text-white text-lg font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-white hover:text-primary transition duration-300 transform hover:scale-[1.03]">
+                        View Our Work
+                    </a>
+                </div>
+            </div>
+
+            <!-- Value Proposition Bar -->
+            <div class="relative mt-16 max-w-6xl mx-auto bg-white text-primary rounded-xl shadow-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="check-circle" class="w-8 h-8 text-accent"></i>
+                    <p class="font-semibold">Licensed & Insured</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="clock" class="w-8 h-8 text-accent"></i>
+                    <p class="font-semibold">On-Time Project Delivery</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="percent" class="w-8 h-8 text-accent"></i>
+                    <p class="font-semibold">Transparent Pricing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Services Section -->
+        <section id="services" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-4">Our Core Contracting Services</h2>
+                <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                    We specialize in delivering comprehensive solutions for residential and commercial clients, ensuring quality and durability in every project.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1: Residential Remodeling -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border-t-4 border-accent hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <i data-lucide="home" class="w-12 h-12 text-accent mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold text-primary mb-3">Residential Remodeling</h3>
+                        <p class="text-gray-600">
+                            From modern kitchen renovations to luxury bathroom upgrades, we transform your home with exceptional craftsmanship and attention to detail.
+                        </p>
+                    </div>
+
+                    <!-- Service 2: Commercial Construction -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border-t-4 border-accent hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <i data-lucide="factory" class="w-12 h-12 text-accent mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold text-primary mb-3">Commercial Construction</h3>
+                        <p class="text-gray-600">
+                            We handle tenant improvements, office build-outs, and new commercial construction, ensuring projects are completed on schedule and budget.
+                        </p>
+                    </div>
+
+                    <!-- Service 3: Custom Builds & Additions -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border-t-4 border-accent hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <i data-lucide="hard-hat" class="w-12 h-12 text-accent mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold text-primary mb-3">Custom Builds & Additions</h3>
+                        <p class="text-gray-600">
+                            Let us bring your unique architectural plans to life, from custom homes to major structural additions, using superior materials.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="#contact" class="mt-12 inline-block bg-primary text-white text-lg font-bold px-8 py-3 rounded-xl shadow-md hover:bg-blue-800 transition duration-300">
+                    Discuss Your Project Needs
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Portfolio Teaser -->
+        <section id="portfolio" class="py-16 sm:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-4">Recent Projects That Speak for Themselves</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        A sample of our best work demonstrating quality, innovation, and client satisfaction.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition duration-300">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/600x400/104975/ffffff?text=Luxury+Kitchen" alt="Luxury Kitchen Remodel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Modern Kitchen Transformation</h3>
+                            <p class="text-gray-600 text-sm">Residential Remodel • 12 Week Duration</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition duration-300">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/600x400/29629b/ffffff?text=Office+Buildout" alt="Corporate Office Buildout" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Corporate Office Build-Out</h3>
+                            <p class="text-gray-600 text-sm">Commercial Interior • 8 Week Duration</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition duration-300">
+                        <div class="h-60 overflow-hidden">
+                            <img src="https://placehold.co/600x400/3573ac/ffffff?text=Home+Addition" alt="Two-Story Home Addition" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Seamless Home Extension</h3>
+                            <p class="text-gray-600 text-sm">Custom Residential Addition • 5 Month Duration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                     <a href="#contact" class="inline-block border-2 border-primary text-primary text-lg font-bold px-8 py-3 rounded-xl hover:bg-primary hover:text-white transition duration-300">
+                        See More Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. About Us / Trust Section -->
+        <section id="about" class="py-16 sm:py-24 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-accent mb-6">Who is AmaZulu Prime Solutions?</h2>
+                        <p class="text-lg mb-4">
+                            Founded on the principle of integrity and excellence, AmaZulu Prime Solutions Ltd Pty is dedicated to elevating the standard of construction and contracting. We believe that a successful project is built on clear communication, meticulous planning, and a deep commitment to our clients' satisfaction.
+                        </p>
+                        <p class="text-lg mb-6 font-light">
+                            Our team comprises seasoned professionals who manage every phase of the project, ensuring a stress-free experience and a final result that not only meets but exceeds expectations. We are fully **Licensed, Bonded, and Insured**.
+                        </p>
+                        <div class="flex space-x-4">
+                            <i data-lucide="award" class="w-6 h-6 text-accent"></i>
+                            <i data-lucide="handshake" class="w-6 h-6 text-accent"></i>
+                            <i data-lucide="banknote" class="w-6 h-6 text-accent"></i>
+                        </div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://placehold.co/600x450/0c4a6e/ffffff?text=Our+Professional+Team" alt="Our professional team on site" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 bg-accent text-primary p-4 rounded-tr-xl font-bold text-lg">
+                            "Prime Quality, Guaranteed."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Contact / Request a Quote Form (Netlify Ready) -->
+        <section id="contact" class="py-16 sm:py-24 bg-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-4">Start Your Project with a Free Quote</h2>
+                    <p class="text-xl text-gray-600">
+                        Tell us about your contracting needs and one of our project managers will be in touch within one business day.
+                    </p>
+                </div>
+
+                <!-- NETLIFY FORM SETUP: data-netlify="true" is essential -->
+                <form name="quote-request" method="POST" data-netlify="true" class="bg-white p-8 md:p-12 rounded-xl shadow-2xl space-y-6">
+                    <!-- Required hidden field for Netlify -->
+                    <input type="hidden" name="form-name" value="quote-request" />
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" name="name" id="name" required class="w-full border border-gray-300 p-3 rounded-lg focus:ring-accent focus:border-accent shadow-sm transition duration-150">
+                        </div>
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" name="email" id="email" required class="w-full border border-gray-300 p-3 rounded-lg focus:ring-accent focus:border-accent shadow-sm transition duration-150">
+                        </div>
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" required class="w-full border border-gray-300 p-3 rounded-lg focus:ring-accent focus:border-accent shadow-sm transition duration-150">
+                        </div>
+                        <!-- Project Type -->
+                        <div>
+                            <label for="project-type" class="block text-sm font-medium text-gray-700 mb-1">Type of Project</label>
+                            <select name="project-type" id="project-type" required class="w-full border border-gray-300 p-3 rounded-lg focus:ring-accent focus:border-accent shadow-sm transition duration-150 bg-white">
+                                <option value="">Select an Option</option>
+                                <option value="residential-remodel">Residential Remodel</option>
+                                <option value="commercial-buildout">Commercial Buildout</option>
+                                <option value="new-construction">New Construction / Addition</option>
+                                <option value="maintenance">Repair / Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Project Details / Message</label>
+                        <textarea name="message" id="message" rows="4" required class="w-full border border-gray-300 p-3 rounded-lg focus:ring-accent focus:border-accent shadow-sm transition duration-150"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-accent text-primary text-xl font-extrabold px-6 py-4 rounded-xl shadow-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-[1.01]">
+                        Submit Request
+                    </button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h4 class="text-xl font-bold text-accent mb-4">AmaZulu Prime Solutions</h4>
+                    <p class="text-sm mb-4">
+                        Committed to quality construction and client satisfaction across all our services.
+                    </p>
+                    <p class="text-xs">
+                        &copy; <span id="current-year"></span> AmaZulu Prime Solutions Ltd Pty
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-accent transition duration-200">Our Story</a></li>
+                        <li><a href="#services" class="hover:text-accent transition duration-200">All Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-accent transition duration-200">Past Projects</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition duration-200">Request a Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span>(555) 123-4567</span></li>
+                        <li class="flex items-center space-x-2"><i data-lucide="mail" class="w-4 h-4 text-accent"></i><span>info@amazuluprime.com</span></li>
+                        <li class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span>Licensed and Bonded Contractor</span></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-accent hover:text-white transition duration-200"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-accent hover:text-white transition duration-200"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-accent hover:text-white transition duration-200"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-6 text-center text-xs text-gray-400">
+                <a href="#" class="hover:text-accent mx-2">Privacy Policy</a> | 
+                <a href="#" class="hover:text-accent mx-2">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // 1. Mobile Menu Toggle Logic
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            window.openMenu = function() {
+                mobileMenu.classList.add('open');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            }
+
+            window.closeMenu = function() {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            }
+
+            menuToggle.addEventListener('click', openMenu);
+            menuClose.addEventListener('click', closeMenu);
+            
+            // Note: The mobile navigation links now use the inline onclick="closeMenu()" attribute.
+
+            // 2. Sticky Header Effect 
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-2xl');
+                } else {
+                    header.classList.remove('shadow-2xl');
+                }
+            });
+
+            // 3. Set Current Year in Footer
+            const currentYearElement = document.getElementById('current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+
+</body>
+</html>
