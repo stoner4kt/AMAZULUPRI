@@ -43,6 +43,26 @@
             fill: var(--color-accent);
             stroke: var(--color-accent);
         }
+        
+        /* Specific Hero Background Styling for the Logo */
+        #hero-bg-logo {
+            /* CRITICAL: This path assumes your logo file is named 
+               AmaZulu Prime Solutions.png and is in the same directory as this index.html file.
+            */
+            background-image: url('AmaZulu Prime Solutions.png'); 
+            background-repeat: no-repeat;
+            background-position: center 30%; /* Position slightly higher for better visibility */
+            background-size: 500px; /* Adjust size for a large visual impact */
+            opacity: 0.1; /* Very subtle opacity so text remains readable */
+            filter: grayscale(100%) brightness(0.5); /* Apply filter to make it black/dark against the blue overlay */
+        }
+
+        /* Responsive adjustments for the logo size */
+        @media (max-width: 768px) {
+            #hero-bg-logo {
+                background-size: 300px; /* Smaller size on mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,10 +114,11 @@
     <main>
         <!-- 1. Hero Section -->
         <section id="home" class="relative overflow-hidden pt-20 md:pt-24 pb-16 bg-gray-100">
+            <!-- Background Color Overlay -->
             <div class="absolute inset-0 bg-primary opacity-90"></div>
-            <div class="absolute inset-0 bg-cover bg-center" 
-                 style="background-image: url('https://placehold.co/1920x1080/1e3a8a/ffffff?text=Facilities+Management+Excellence'); background-blend-mode: multiply; opacity: 0.5;">
-            </div>
+            
+            <!-- Logo Background Image -->
+            <div id="hero-bg-logo" class="absolute inset-0"></div>
 
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
                 <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">
