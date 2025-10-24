@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Signs & House Numbers | Gallery & Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">The Sign Workshop</div>
+        <nav>
+            <a href="#gallery">Gallery</a>
+            <a href="#order-form">Order</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero-banner">
+            <h1>MODERN MARQUEE SIGNS</h1>
+            <p>From custom light-up numbers for events to permanent metal business logos, we craft illuminated signs with unmatched quality and style. Explore our concepts below.</p>
+        </section>
+
+        <section id="gallery">
+            <h1>WE MADE MODERN & CREATIVE CONCEPTS</h1>
+            
+            <div class="catalog-tabs">
+                <button class="tab-button active" data-catalog="all">All</button>
+                <button class="tab-button" data-catalog="housenumbers">House Numbers</button>
+                <button class="tab-button" data-catalog="businesssigns">Business Signs</button>
+                <button class="tab-button" data-catalog="wood">Wood</button>
+                <button class="tab-button" data-catalog="metal">Metal</button>
+            </div>
+
+            <div class="gallery-container">
+                <div class="sign-card" data-catalogs="housenumbers metal">
+                    <img src="images/sign-1.jpg" alt="Modern Metal House Number 16">
+                    <div class="caption">
+                        <h3>Illuminated House Number '16'</h3>
+                        <p>Marquee style, white finish.</p>
+                    </div>
+                </div>
+
+                <div class="sign-card" data-catalogs="businesssigns wood">
+                    <img src="images/sign-2.jpg" alt="Engraved Wooden Business Sign">
+                    <div class="caption">
+                        <h3>Bespoke Coffee Nook Sign</h3>
+                        <p>Engraved reclaimed wood.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card" data-catalogs="housenumbers wood">
+                    <img src="images/sign-3.jpg" alt="Painted Wood House Sign">
+                    <div class="caption">
+                        <h3>Painted Wood Plaque</h3>
+                        <p>Classic style with custom text.</p>
+                    </div>
+                </div>
+                
+                </div>
+        </section>
+
+        <section id="order-form">
+            <h1>START YOUR CUSTOM ORDER</h1>
+            <p class="form-intro">Tell us about your project. This helps us provide an accurate quote quickly!</p>
+            
+            <form id="customer-form" name="sign-order" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <p class="hidden-field">
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                <input type="hidden" name="form-name" value="sign-order" /> 
+                <input type="hidden" name="_next" value="/thank-you.html" /> <h2>Your Contact Details</h2>
+                <div class="form-group">
+                    <label for="name">Your Name*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <h2>Project Requirements</h2>
+                <div class="form-group">
+                    <label for="deadline">Required Completion Date*</label>
+                    <input type="date" id="deadline" name="Required Date" required>
+                    <small>We'll confirm if this date is possible.</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Installation Location / Delivery Address (City/State or Zip)*</label>
+                    <input type="text" id="location" name="Location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Estimated Budget Range</label>
+                    <select id="budget" name="Budget">
+                        <option value="Unspecified">Please Select...</option>
+                        <option value="$100 - $300">$100 - $300</option>
+                        <option value="$300 - $800">$300 - $800</option>
+                        <option value="$800 - $1500">$800 - $1500</option>
+                        <option value=">$1500">Over $1500</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="details">Sign Details (Type, Size, Text, Material, Style)*</label>
+                    <textarea id="details" name="Details" rows="8" required></textarea>
+                </div>
+
+                <button type="submit">Submit Request & Get a Quote</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The Sign Workshop | Custom Signs Made with Care</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
