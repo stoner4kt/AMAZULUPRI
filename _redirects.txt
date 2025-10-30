@@ -1,0 +1,8 @@
+# 1. Force sitemap to be served as a file
+/sitemap.xml /sitemap.xml 200
+
+# 2. Force robots.txt to be served as a file
+/robots.txt /robots.txt 200
+
+# 3. Your site's main fallback (essential for SPAs and clean URLs)
+/* /index.html 200
